@@ -12,7 +12,7 @@ def write_task_content(day: int, task: int):
 
 
             def main():
-                data = open("day{day}/test_data.txt", "r")
+                data = open("day{day}/ex_data.txt", "r")
 
                 solution = solve_{task_str}_task(data)
                 print("Solution {task_str} task: ", solution)
@@ -38,8 +38,7 @@ def setup_folders_and_files(day: int):
     makedirs(f"day{day}/python_solution", exist_ok=True)
     setup_task_file(day, 1)
     setup_task_file(day, 2)
-    open(get_file_name(day, "example_task1"), "w+").close()
-    open(get_file_name(day, "example_task2"), "w+").close()
+    open(get_file_name(day, "ex_data"), "w+").close()
 
 
 def main():
