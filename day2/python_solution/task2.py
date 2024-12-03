@@ -27,21 +27,21 @@ def solve_second_task(file):
     for line in file:
         numbers = line.split()
         diffs = [int(numbers[i]) - int(numbers[i - 1]) for i in range(1, len(numbers))]
-        safe_reports += is_safe(diffs, True)
-        # if is_safe2(diffs):
-        #     safe_reports += 1
-        #     continue
-        # for i in range(len(diffs)):
-        #     diffs_temp = diffs[:i] + diffs[i+1:]
-        #     if i == len(diffs) - 1:
-        #         if is_safe2(diffs_temp):
-        #             safe_reports += 1
-        #             break
-        #     if i != 0:
-        #         diffs_temp[i - 1] += diffs[i]
-        #     if is_safe2(diffs_temp):
-        #         safe_reports += 1
-        #         break
+        # safe_reports += is_safe(diffs, True)
+        if is_safe2(diffs):
+            safe_reports += 1
+            continue
+        for i in range(len(diffs)):
+            diffs_temp = diffs[:i] + diffs[i+1:]
+            if i == len(diffs) - 1:
+                if is_safe2(diffs_temp):
+                    safe_reports += 1
+                    break
+            if i != 0:
+                diffs_temp[i - 1] += diffs[i]
+            if is_safe2(diffs_temp):
+                safe_reports += 1
+                break
     return safe_reports
 
 
