@@ -38,7 +38,7 @@ def setup_folders_and_files(day: int):
     makedirs(f"day{day}/python_solution", exist_ok=True)
     setup_task_file(day, 1)
     setup_task_file(day, 2)
-    open(get_file_name(day, "ex_data"), "w+").close()
+    open(get_file_name(day, "ex"), "w+").close()
 
 
 def main():
