@@ -1,3 +1,6 @@
+from sys import argv
+
+
 def solve_first_task(file):
     list_of_first_numbers = []
     list_of_second_numbers = []
@@ -11,7 +14,8 @@ def solve_first_task(file):
 
 
 def main():
-    data = open("day1/test_data.txt", "r")
+    test_or_ex = argv[1]
+    data = open(f"day1/{test_or_ex}_data.txt", "r")
 
     solution = solve_first_task(data)
     print("Solution first task: ", solution)
